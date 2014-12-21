@@ -513,3 +513,12 @@ require get_template_directory() . '/inc/customizer.php';
 if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
 	require get_template_directory() . '/inc/featured-content.php';
 }
+
+function my_scripts_enqueue() {
+    wp_register_script( 'bootstrap-js', get_template_directory_uri() . '/dist/js/bootstrap.min.js', array('jquery'), NULL, true );
+    wp_register_style( 'bootstrap-css', get_template_directory_uri() . '/dist/css/bootstrap.min.css', false, NULL, 'all' );
+
+    wp_enqueue_script( 'bootstrap-js' );
+    wp_enqueue_style( 'bootstrap-css' );
+}
+add_action( 'wp_enqueue_scripts', 'my_scripts_enqueue' );

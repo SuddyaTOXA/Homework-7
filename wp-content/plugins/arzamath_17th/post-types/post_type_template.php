@@ -48,7 +48,7 @@ if(!class_exists('Post_Type_Template'))
     				'has_archive' => true,
     				'description' => __("This is a sample post type meant only to illustrate a preferred structure of plugin development"),
     				'supports' => array(
-    					'title', 'editor', 'excerpt', 
+    					'title', 'editor', 'excerpt', 'thumbnail'
     				),
     			)
     		);

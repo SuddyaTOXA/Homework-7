@@ -41,6 +41,9 @@ if(!class_exists('WP_Plugin_Template')) //перевірка чи був ого�
             require_once(sprintf("%s/post-types/post_type_template.php", dirname(__FILE__)));
             $Post_Type_Template = new Post_Type_Template();
 
+            require_once(sprintf("%s/arzamath_17th_widget.php", dirname(__FILE__)));
+            $Arzamath_17th_Widget = new Arzamath_17th_Widget();
+
             $plugin = plugin_basename(__FILE__);
             add_filter("plugin_action_links_$plugin", array( $this, 'plugin_settings_link' ));
 
